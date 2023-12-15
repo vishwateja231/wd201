@@ -1,4 +1,5 @@
-const todoList = () => {
+
+  const todoList = () => {
     all = [];
   
     const add = (todoItem) => {
@@ -25,7 +26,10 @@ const todoList = () => {
     };
   
     const toDisplayableList = (list) => {
-      return list.map(item => `${item.title} - Due: ${item.dueDate}`).join('\n');
+      return list.map(item => {
+        const checkbox = item.completed ? '[x]' : '[ ]';
+        return `${checkbox} ${item.title} ${item.dueDate}`;
+      }).join('\n');
     };
   
     return {
@@ -36,9 +40,9 @@ const todoList = () => {
       dueToday,
       dueLater,
       toDisplayableList
+      
     };
   };
- 
   const todos = todoList();
 
   const formattedDate = d => {
@@ -79,3 +83,4 @@ const todoList = () => {
   let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
   console.log(formattedItemsDueLater)
   console.log("\n\n")
+  
