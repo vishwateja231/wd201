@@ -5,7 +5,7 @@
   "main": "todo.js",
   "scripts": {
     "test": "jest",
-    "prepare": "todo-app/node_modules/husky/bin/install todo-app/.husky"
+    "prepare": "cd .. && husky install todo-cli/.husky"
   },
   "lint-staged": {
     "*.js": [
